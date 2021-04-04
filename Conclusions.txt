@@ -1,0 +1,37 @@
+Explanation for plots given in Read Me
+
+For the plots for U and V, we see :
+
+For a given r, as c increases, error monotonically reduces
+
+For a given c, as r increases, error monotonically increases
+
+This makes sense and is in line with the theorems in lectures
+
+As r increases, we want to estimate a larger chunk of left and right top
+eigenvectors. Thus without increasing c, increase in r surely will increase
+errors as the Randomized SVD has less data or same data to extrude more information
+
+Finally, increase in c for r fixed is bound to reduce errors
+
+
+For the plot of c vs r, stagnancy is due to MATLAB caveat combined with
+long run times as explained previously
+
+As such for a fixed error, with an increase in r, c surely must increase, reinforced
+both via theory and via all the other plots that we have obtained
+
+As such, to remove stagnancy, we could interpolate or predict c for those
+lower r values
+
+In conclusion :
+
+Yes, I would prefer Randomized SVD, especially for large matrices
+
+Reason is simple, even though RSVD required 'averaging' which may
+increase run times, the reduction in overall run times and memory allocation
+is much too large to be neglected, especially in situations where data sets
+are enormous.
+
+Thus RSVD has better overall runtimes and reduces memory consumption, things
+that can't be neglected in large datasets
